@@ -157,7 +157,7 @@ export default {
                     embed.addFields({name: document.getElementsByClassName('pi-item pi-data pi-item-spacing pi-border-color')[index].children[0].textContent, value: document.getElementsByClassName('pi-item pi-data pi-item-spacing pi-border-color')[index].children[1].textContent});
                     haveFields = true;
                 }
-                else 
+                else {
                     new handlers().wikiFormat(document.getElementsByClassName('pi-item pi-data pi-item-spacing pi-border-color')[index]);
                     const content = new handlers().wikiLinkify(document.getElementsByClassName('pi-item pi-data pi-item-spacing pi-border-color')[index]).textContent.trim();
                     
