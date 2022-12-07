@@ -157,7 +157,7 @@ export async function findAbilityName(input, interaction) {
 	}; //list of exceptions
 
 	let randomList = {
-		beyblade: ['Garen', 'Katarina', 'Tryndamer'],
+		beyblade: ['Garen', 'Katarina', 'Tryndamere'],
 		bird: ['Anivia', 'Azir', 'Quinn', 'Rakan', 'Xayah'],
 		cancer: [
 			'Morgana',
@@ -304,7 +304,7 @@ export async function findChampionName(input, interaction) {
 	}; //list of exceptions
 
 	let randomList = {
-		beyblade: ['Garen', 'Katarina', 'Tryndamer'],
+		beyblade: ['Garen', 'Katarina', 'Tryndamere'],
 		bird: ['Anivia', 'Azir', 'Quinn', 'Rakan', 'Xayah'],
 		cancer: [
 			'Morgana',
