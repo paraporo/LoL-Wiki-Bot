@@ -25,10 +25,10 @@ async function checkVersion() {
 }
 
 async function updateRunes() {
-    let rtn;
+    let rawRunes, rtn;
     do {
         rtn = false;
-        runes = await fetch(
+        rawRunes = await fetch(
 			`https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/runesReforged.json`,
 		)
 			.then(async (res) => {
@@ -38,7 +38,16 @@ async function updateRunes() {
 				console.error(err);
 				rtn = true;
 			});
-    } while (rtn || !runes);
+    } while (rtn || !rawRunes);
+    
+    const runeList = [];
+    rawRunes.forEach(t => {
+        runeList.push({
+            name: t.name,
+            icon: t.icon
+        });
+    });
+    
     console.log(`Updated runes to version ${version}`);
 }
 
