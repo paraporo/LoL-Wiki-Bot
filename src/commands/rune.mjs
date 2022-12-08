@@ -206,7 +206,7 @@ const command = {
                 option.setName('rune')
                       .setDescription('Rune / Rune tree Name')
                       .setRequired(true)      
-                      .addChoice(choices())
+                      .addChoices(choices())
                 return option;
             })
     , async execute (interaction, channel) {
