@@ -1,7 +1,7 @@
 import { underscore } from 'discord.js';
 import Fuse from 'fuse.js';
 import fetch from 'node-fetch';
-import { version } from '../index.mjs';
+import { version, runes } from '../index.mjs';
 
 export async function findRune(input, ref) {
 	try {
