@@ -49,7 +49,7 @@ async function updateRunes() {
         t.slots.forEach(s => {
             s.runes.forEach(r => {
                 runeList.push({
-                    name: r.names
+                    name: r.name,
                     icon: r.icon
                 });
             });
