@@ -25,7 +25,21 @@ async function checkVersion() {
 }
 
 async function updateRunes() {
-    
+    let rtn;
+    do {
+        rtn = false;
+        runes = await fetch(
+			`https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/runesReforged.json`,
+		)
+			.then(async (res) => {
+				return await res.json();
+			})
+			.catch((err) => {
+				console.error(err);
+				rtn = true;
+			});
+    } while (rtn || !runes);
+    console.log(`Updated runes to version `version`);
 }
 
 setInterval(checkVersion, 86400000);
