@@ -206,7 +206,12 @@ const command = {
                 option.setName('rune')
                       .setDescription('Rune / Rune tree Name')
                       .setRequired(true)      
-                      .addChoices(choices())
+                runes.list.forEach(rune => {
+                    option.addChoices({
+                        name: rune.name,
+                        value: rune.name
+                    });
+                });
                 return option;
             })
     , async execute (interaction, channel) {
