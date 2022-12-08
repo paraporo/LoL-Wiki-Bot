@@ -39,7 +39,7 @@ async function updateRunes() {
 				rtn = true;
 			});
     } while (rtn || !runes);
-    console.log(`Updated runes to version `version`);
+    console.log(`Updated runes to version ${version});
 }
 
 setInterval(checkVersion, 86400000);
