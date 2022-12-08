@@ -46,7 +46,18 @@ async function updateRunes() {
             name: t.name,
             icon: t.icon
         });
+        t.slots.forEach(s => {
+            s.runes.forEach(r => {
+                runeList.push({
+                    name: r.names
+                    icon: r.icon
+                });
+            });
+        });
     });
+    
+    runes = rawRunes;
+    runes.list = runeList;
     
     console.log(`Updated runes to version ${version}`);
 }
