@@ -14,8 +14,17 @@ async function checkVersion() {
                             .then(async(res) => {return await res.json()})
                             .catch(err => {console.error(err); return undefined});
     } while (!versions || !versions[0]);
-    version = versions[0];
-	console.log(`Checked version, new version: ${version}`);
+    if (version !== versions[0]) {
+        updateRunes();
+        console.log(`Checked version, ${version} --> ${versions[0]}`);
+        version = versions[0];
+    }
+	else
+        console.log(`Checked version}`);
+}
+
+async function updateRunes() {
+    
 }
 
 setInterval(checkVersion, 86400000);
