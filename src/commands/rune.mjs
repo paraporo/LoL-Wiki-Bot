@@ -192,7 +192,10 @@ async function handleTree(interaction, channel, tree) {
 
 function choices() {
     let runeList = [];
-    
+    runes.list.forEach(rune => {
+        runeList.push(rune.name);
+    });
+    return runeList;
 }
 
 const command = {
