@@ -205,12 +205,14 @@ const command = {
             .addStringOption((option) => {
                 option.setName('rune')
                       .setDescription('Rune / Rune tree Name')
-                      .setRequired(true)      
+                      .setRequired(true)     
+                let i = 0;
                 runes.list.forEach(rune => {
                     option.addChoices({
                         name: rune.name,
                         value: rune.name
                     });
+                    i++; console.log(i);
                 });
                 return option;
             })
