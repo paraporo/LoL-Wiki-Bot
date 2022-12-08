@@ -6,7 +6,6 @@ import { version } from '../index.mjs';
 export async function findRune(input, ref) {
 	try {
 		input = input.toLowerCase().replace(/([^a-z])/g, '');
-		let rtn = false;
 
 		let excList = {
 			mana: 'Manaflow Band',
@@ -25,19 +24,6 @@ export async function findRune(input, ref) {
 					Math.floor(Math.random() * randomList[input].length)
 				];
 		input = input.toLowerCase().replace(/([^a-z])/g, '');
-
-
-		const runes = await fetch(
-			`https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/runesReforged.json`,
-		)
-			.then(async (res) => {
-				return await res.json();
-			})
-			.catch((err) => {
-				console.error(err);
-				rtn = true;
-			});
-		if (rtn) return undefined;
 
 		let names = [];
 		runes.forEach((t) => {
