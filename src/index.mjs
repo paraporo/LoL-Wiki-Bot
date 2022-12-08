@@ -20,7 +20,7 @@ async function checkVersion() {
         version = versions[0];
     }
 	else
-        console.log(`Checked version}`);
+        console.log(`Checked version`);
 }
 
 async function updateRunes() {
