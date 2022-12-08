@@ -6,6 +6,7 @@ import config from '../config.json' assert { type: 'json' };
 import Package from '../package.json' assert { type: 'json' };
 
 export let version;
+export let runes;
 
 async function checkVersion() {
     let versions;
@@ -15,9 +16,9 @@ async function checkVersion() {
                             .catch(err => {console.error(err); return undefined});
     } while (!versions || !versions[0]);
     if (version !== versions[0]) {
-        updateRunes();
         console.log(`Checked version, ${version} --> ${versions[0]}`);
         version = versions[0];
+        updateRunes();
     }
 	else
         console.log(`Checked version`);
