@@ -8,6 +8,7 @@ import {
 import { JSDOM } from 'jsdom';
 import { findRune } from '../modules/nameFinders.mjs';
 import handlers from '../modules/handlers.mjs';
+import { runes } from '../index.mjs'
 
 export const informaton = {
     name: 'rune',
@@ -189,6 +190,11 @@ async function handleTree(interaction, channel, tree) {
     }
 }
 
+function choices() {
+    let runeList = [];
+    
+}
+
 const command = {
     data: new SlashCommandBuilder()
             .setName(`${informaton.name}`)
@@ -197,6 +203,7 @@ const command = {
                 option.setName('rune')
                       .setDescription('Rune / Rune tree Name')
                       .setRequired(true)      
+                      .addChoice(choices())
                 return option;
             })
     , async execute (interaction, channel) {
