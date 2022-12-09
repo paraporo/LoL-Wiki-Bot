@@ -80,7 +80,7 @@ async function handleRune(interaction, rune) {
         let embed = new EmbedBuilder();
 
         if(document.getElementsByClassName('pi-item pi-data pi-item-spacing pi-border-color')[0] === undefined) {
-            await handlError(interaction, 1);
+            await handlError(interaction, -1);
             return;
         }
 
@@ -108,6 +108,8 @@ async function handleRune(interaction, rune) {
 
         if (haveFields)
             description += '​';
+
+        console.log(description);
 
         embed.setDescription(description);
         rtnEmbeds.push(embed);
